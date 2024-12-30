@@ -1,0 +1,11 @@
+# Ignore directories
+/node_modules/
+
+# Ignore OS temp files
+.DS_Store
+
+#Ignore cypress
+cypress/screenshots/
+cypress/videos/
+cypress/results/
+cypress/cache/

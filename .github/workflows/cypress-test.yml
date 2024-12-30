@@ -1,0 +1,29 @@
+name: Run Cypress Tests
+
+on:
+  push:
+    branches:
+      - main  # Ejecuta tests en cada push a la rama principal
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Clonar el repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Instalar Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16 # O la versión que prefieras
+
+      # 3. Instalar dependencias
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Ejecutar Cypress sin script personalizado
+      - name: Run Cypress tests
+        run: npx cypress run
